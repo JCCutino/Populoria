@@ -1,8 +1,11 @@
-body{
+.bodyCrear{
     background-color: #1E1E1E;
     color: white;
 }
-
+.bodyLista{
+    background-color: #666666;
+    color: black;
+}
 #fotoLogo{
     width: 25%;
 }
@@ -18,4 +21,29 @@ h3{
 
 .crearProyecto{
     background-color: #ffffff;
+}
+
+.proyectos{
+    background-color: #D9D9D9;
+    margin-left: 10%; 
+    margin-right: 10%; 
+}
+
+.badge{
+    width: 100px;
+    height: 25px;
+}
+
+#colaboradores img{
+    border-radius: 5.8rem;
+    width: 35%;
+}
+
+
+@media only screen and (max-width: 1300px) {
+    #lista{
+        display:block;
+        text-align: center;
+        justify-content: center;
+    }
 }

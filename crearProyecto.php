@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="cssLuis/luis.css">
     </head>
 
-    <body>
+    <body class="bodyCrear">
         <header>
             <?php @include("header.php"); ?>
         </header>
