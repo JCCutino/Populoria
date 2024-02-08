@@ -1,7 +1,69 @@
+body{
+  background-color: #666666;
+}
+
+header{
+  background-color: #222222;
+  color: #ffffff;
+}
+.contenedor {
+  background-color: #d9d9d9;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px; 
+}
 .icon {
   width: 50px;
 }
 
+.badge{
+  font-size: 20px;
+  background-color: #46A654;
+  color: #ffffff;
+  border-radius: 20px;
+}
+
+.badge-completado{
+  font-size: 20px;
+  background-color: #46A654;
+  color: #ffffff;
+  border-radius: 20px;
+  margin-right: 20px;
+}
+
+.badge-progreso{
+  font-size: 20px;
+  background-color: #beb245;
+  color: #ffffff;
+  border-radius: 20px;
+  margin-right: 20px;
+
+}
+
+.badge-cancelado{
+  font-size: 20px;
+  background-color: #be4141;
+  color: #ffffff;
+  border-radius: 20px;
+  margin-right: 20px;
+
+}
+
 header p{
     margin: 0;
+}
+.btn-form {
+  background-color: #46A654;
+  border-color: #46A654;
+  color: #ffffff;
+}
+
+.btn-form:hover {
+  background-color: #3A844B;
+  border-color: #3A844B;
+}
+
+.btn-form:active {
+  background-color: #2F6A3F; 
+  border-color: #2F6A3F;
 }

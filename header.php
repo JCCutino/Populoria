@@ -1,4 +1,4 @@
-<header class="p-3 text-bg-info">
+<header class="p-3">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-around w-100">
 
