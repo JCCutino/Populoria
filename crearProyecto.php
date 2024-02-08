@@ -22,7 +22,7 @@
 
     <body>
         <header>
-            <!-- place navbar here -->
+            <?php @include("header.php"); ?>
         </header>
         <main>
             <section class="align-items-center d-flex justify-content-center mt-5">
