@@ -16,35 +16,35 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+        <link rel="stylesheet" href="styles/style.css">
     </head>
 
-    <body>
-        <header>
-            <div id="headerRegistro">
-                <img>
-                <h1>Populoria</h1>
-            </div>
-        </header>
-        <main>
-            <body>
-                <section id="registro">
-                    <div class="container">
-                        <form action="" method="post">
-                            <div class="">
-                                <h1>Regístrate</h1>
-                                <label for="nombre">Nombre:</label>
-                                <input id="nombre" type="text" name="nombre">
-                                <label for="email">Email:</label>
-                                <input id="email" type="text" name="email">
-                                <label for="contrasena">Contraseña:</label>
-                                <input id="contrasena" type="text" name="contrasena">
-                                <input type="submit" value="Registrarse">
-                            </div>
-                        </form>
-                    </div>
-                </section>
-            </body>
-        </main>
+    <body id="fondo">
+    <header class="d-flex align-items-center justify-content-center">
+    <div id="headerRegistro" class="d-flex align-items-center">
+        <img src="image/Populoria.svg" alt="Logo de Populoria" width="150px" height="150px">
+        
+    </div>
+    <h1 class="titulito ml-5 mb-0">Populoria</h1>
+</header>
+
+<main>
+    <section id="registro">
+        <div class="container">
+            <form action="" method="post" class="registro-form">
+                <h2>Regístrate</h2>
+                <label for="nombre">Nombre:</label>
+                <input id="nombre" type="text" name="nombre">
+                <label for="email">Email:</label>
+                <input id="email" type="text" name="email">
+                <label for="contrasena">Contraseña:</label>
+                <input id="contrasena" type="text" name="contrasena">
+                <input type="submit" value="Registrarse">
+            </form>
+        </div>
+    </section>
+</main>
+
         <footer>
             <!-- place footer here -->
         </footer>
