@@ -1,0 +1,21 @@
+body{
+    background-color: #1E1E1E;
+    color: white;
+}
+
+#fotoLogo{
+    width: 25%;
+}
+
+h3{
+    font-size: 50px;
+}
+
+#creacion{
+    background-color: #666666;
+    border-radius: 0.8rem;
+}
+
+.crearProyecto{
+    background-color: #ffffff;
+}

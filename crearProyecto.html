@@ -16,6 +16,8 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+
+        <link rel="stylesheet" href="cssLuis/luis.css">
     </head>
 
     <body>
@@ -23,36 +25,41 @@
             <!-- place navbar here -->
         </header>
         <main>
-            <section class="align-items-center d-flex justify-content-center">
-                <div class="text-center">
-                    <img src="fotos/icono-ventilacion.webp" alt="Icono de Ventilación">
-                    <h3>POPULORIA</h3>
-                    <div class="container">
-                        <div class="row">
-                            <h4>Crea tu proyecto</h4>
+            <section class="align-items-center d-flex justify-content-center mt-5">
+                <div class="text-center justify-content-center">
+                    <div class="d-flex align-items-center ms-5">
+                        <img src="fotos/icono-ventilacion.webp" alt="Icono de Ventilación" id="fotoLogo" class="ps-5">                   
+                        <h3 class="ps-3">POPULORIA</h3>
+                    </div>
+                    <div class="container mt-5 p-5" id="creacion">
+                        <div>
+                            <h4 class="mb-4">Crear un nuevo proyecto</h4>
                             <form action="/procesar_formulario" method="post" enctype="multipart/form-data">
-                                <!-- Campo para subir imagen -->
-                               
-                        
                                 <!-- Campo para nombre -->
-                                <label for="nombre">Nombre del Proyecto:</label>
-                                <input type="text" id="nombre" name="nombre" required>
-                                <br>
-                        
+                                <div class="row form-group">
+                                    <div class="col-6 d-block">
+                                        <label for="nombre" >Nombre del Proyecto:</label>
+                                        <input type="text" id="nombre" name="nombre" class="form-control" required>
+                                    </div>
+                                
+                                    <div class="col-6 d-block">
+                                        <label for="tecnologias">Tecnologías Utilizadas:</label>
+                                        <input type="text" id="tecnologias" name="tecnologias" class="form-control" required>
+                                    </div>
+                                </div>
                                 <!-- Campo para descripción -->
-                                <label for="descripcion">Descripción:</label>
-                                <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
-                                <br>
-                        
-                                <!-- Campo para tecnologías -->
-                                <label for="tecnologias">Tecnologías Utilizadas:</label>
-                                <input type="text" id="tecnologias" name="tecnologias" required>
-                                <br>
-                         <label for="imagen">Subir Imagen:</label>
-                                <input type="file" id="imagen" name="imagen" accept="image/*" required>
-                                <br>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="descripcion">Descripción:</label>
+                                        <textarea id="descripcion" name="descripcion" class="form-control" rows="2" required></textarea>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="imagen">Subir Imagen:</label>
+                                        <input type="file" id="imagen" name="imagen" accept="image/*" class="form-control" required>
+                                    </div>
+                                </div>
                                 <!-- Botón de enviar -->
-                                <input type="submit" value="Publicar">
+                                <input class="mt-5 btn crearProyecto" type="submit" value="Publicar">
                             </form>
                         </div>
                     </div>
