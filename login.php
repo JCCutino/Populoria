@@ -1,52 +1,49 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Title</title>
+        <title>Registro</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
             name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
 
         <!-- Bootstrap CSS v5.2.1 -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"/>
-        
-        
+            crossorigin="anonymous"
+        />
         <link rel="stylesheet" href="styles/style.css">
-
     </head>
 
-    <body id="foto">
+    <body id="fondo">
+    <header class="d-flex align-items-center justify-content-center">
+    <div id="headerRegistro" class="d-flex align-items-center">
+        <img src="image/Populoria.svg" alt="Logo de Populoria" width="150px" height="150px">
         
-        <main>
-
-        <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="logo">
-                    <img src="image/Populoria.svg" alt="Logo de Populoria" >
-                    <h1>POPULORIA</h1>
-                    <div class="row">
-                        <div class="col-md-6 mt-5">
-                           <a href="registro.php"> <button type="button" class="btn btn-primary  btn-block">Registro</button></a>
-                        </div>
-                        <div class="col-md-6 mt-5  ">
-                           <a href="login.php"> <button type="button" class="btn btn-secondary  btn-block">Login</button></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
+    <h1 class="titulito ml-5 mb-0">Populoria</h1>
+</header>
 
+<main>
+    <section id="registro">
+        <div class="container">
+            <form action="" method="post" class="registro-form">
+                <h2>Logueate</h2>
+              
+                <label for="email">Email:</label>
+                <input id="email" type="text" name="email">
+                <label for="contrasena">Contraseña:</label>
+                <input id="contrasena" type="text" name="contrasena">
+                <input type="submit" value="Registrarse">
+            </form>
+        </div>
+    </section>
+</main>
 
-
-
-        </main>
         <footer>
             <!-- place footer here -->
         </footer>
