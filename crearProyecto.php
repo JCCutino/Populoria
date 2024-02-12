@@ -16,7 +16,7 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
-
+        <link rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" href="cssLuis/luis.css">
     </head>
 
@@ -27,10 +27,6 @@
         <main>
             <section class="align-items-center d-flex justify-content-center mt-5">
                 <div class="text-center justify-content-center">
-                    <div class="d-flex align-items-center ms-5">
-                        <img src="fotos/icono-ventilacion.webp" alt="Icono de Ventilación" id="fotoLogo" class="ps-5">                   
-                        <h3 class="ps-3">POPULORIA</h3>
-                    </div>
                     <div class="container mt-5 p-5" id="creacion">
                         <div>
                             <h4 class="mb-4">Crear un nuevo proyecto</h4>

@@ -169,3 +169,12 @@ body{
   display: block;
   margin: 10px auto; /* Cambiado de margin-bottom a margin para centrar verticalmente */
 }
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+button a  {
+  color:#000000;
+}

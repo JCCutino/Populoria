@@ -16,7 +16,7 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
-        
+        <link rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" href="cssLuis/luis.css">
     </head>
 
@@ -29,7 +29,7 @@
             <section id="proyecto1" class="mt-5" >
                 <div class="proyectos d-block d-xxl-inline-flex">
                     <div class="col-12 col-xxl-2">
-                        <img src="fotos/Yo.jpg" width="200">
+                        <img src="image/Yo.jpg" width="200">
                     </div>
                     <div class=" d-block ms-xxl-5 col-12 col-xxl-6 texto">                   
                         <h1>Titulo proyecto</h1>
@@ -43,15 +43,15 @@
                         </div>
                     </div>
                     <div class="ms-xxl-5 col-12 col-xxl-3" id="colaboradores">
-                        <img src="fotos/Yo.JPG" class="img-fluid"  width="100">
-                        <img src="fotos/Yo.JPG"  class="img-fluid" width="100">
+                        <img src="image/Yo.JPG" class="img-fluid"  width="100">
+                        <img src="image/Yo.JPG"  class="img-fluid" width="100">
                     </div>
                 </div>
             </section>
             <section id="proyecto1" class="mt-5" >
                 <div class="proyectos d-block d-xxl-inline-flex">
                     <div class="col-12 col-xxl-2">
-                        <img src="fotos/Yo.jpg" width="200">
+                        <img src="image/Yo.jpg" width="200">
                     </div>
                     <div class=" d-block ms-xxl-5 col-12 col-xxl-6 texto">                   
                         <h1>Titulo proyecto</h1>
@@ -65,8 +65,8 @@
                         </div>
                     </div>
                     <div class="ms-xxl-5 col-12 col-xxl-3" id="colaboradores">
-                        <img src="fotos/Yo.JPG" class="img-fluid"  width="100">
-                        <img src="fotos/Yo.JPG"  class="img-fluid" width="100">
+                        <img src="image/Yo.JPG" class="img-fluid"  width="100">
+                        <img src="image/Yo.JPG"  class="img-fluid" width="100">
                     </div>
                 </div>
             </section>

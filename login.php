@@ -38,7 +38,7 @@
                 <input id="email" type="text" name="email">
                 <label for="contrasena">Contraseña:</label>
                 <input id="contrasena" type="text" name="contrasena">
-                <input type="submit" value="Registrarse">
+                <button><a href="listaProyectos.php">Iniciar sesion    </a></button>
             </form>
         </div>
     </section>
