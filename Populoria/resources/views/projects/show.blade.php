@@ -46,13 +46,46 @@
                 <div>
                     @foreach ($project->users as $user)
                         <div>
-                            <img class="img-fluid w-25" src="{{ asset($user->image) }}" alt="{{ $user->name }}">
+                            <a href="{{ route('users.show', $user->id) }}"><img class="project img-fluid w-25"
+                                    src="{{ asset($user->image) }}" alt="{{ $user->name }}"></a>
                             <p>{{ $user->name }}</p>
                         </div>
                     @endforeach
                 </div>
             </div>
         </section>
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="contenedor">
+                        <!-- Sección de comentarios -->
+                        <section class="mt-5">
+                            <h3>Sección de comentarios</h3>
+
+                            <!-- Mostrar comentarios -->
+                            <div class="comentarios-container mb-4">
+                                <h4>Comentarios de otros usarios:</h4>
+                                <ul class="list-unstyled">
+                                    <li><strong>NombreUsuario (Juancc12):</strong> Lorem ipsum dolor sit amet.</li>
+                                    <li><strong>NombreUsuario (LuisYerga):</strong> Consectetur adipiscing elit.</li>
+                                    <li><strong>NombreUsuario (Toroviejo):</strong> Sed do eiusmod tempor incididunt ut
+                                        labore
+                                        et dolore magna aliqua.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Área de comentario -->
+                            <div class="text-center">
+                                <textarea name="comentarios" rows="6" cols="50" placeholder="Introduce un mensaje sobre este usuario"
+                                    required></textarea>
+                                <br>
+                                <button class="btn-form badge mt-3 mb-3">Enviar</button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
     </article>
 
 @endsection

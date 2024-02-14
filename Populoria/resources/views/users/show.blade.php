@@ -7,6 +7,10 @@
     <link href="{{ asset('styles/style.css') }}" rel="stylesheet">
 @endsection
 
+@php
+use Illuminate\Support\Str;
+@endphp
+
 @section('content')
     <div class="container mt-5">
         <div class="row">
@@ -55,7 +59,7 @@
                     @foreach ($user->projects as $project)
                         <div class="row align-items-center">
                             <div class="col-md-8">
-                                <h4>{{ $project->name }}: Breve descripción del proyecto</h4>
+                                <a class="text-primary" href="{{ route('projects.show', $project->id) }}"><h4>{{ $project->name }}: {{ str::limit($project->description, 30) }}</h4></a>
                             </div>
                             <div class="col-md-4 text-end">
                                 <span
@@ -70,37 +74,6 @@
 
 
     {{-- Esta sección yo la movería a proyectos porque va a ser mucho más fácil todo --}}
-    <div class="container mt-5 mb-5">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="contenedor">
-                    <!-- Sección de comentarios -->
-                    <section class="mt-5">
-                        <h3>Sección de comentarios</h3>
-
-                        <!-- Mostrar comentarios -->
-                        <div class="comentarios-container mb-4">
-                            <h4>Comentarios de otros usarios:</h4>
-                            <ul class="list-unstyled">
-                                <li><strong>NombreUsuario (Juancc12):</strong> Lorem ipsum dolor sit amet.</li>
-                                <li><strong>NombreUsuario (LuisYerga):</strong> Consectetur adipiscing elit.</li>
-                                <li><strong>NombreUsuario (Toroviejo):</strong> Sed do eiusmod tempor incididunt ut labore
-                                    et dolore magna aliqua.</li>
-                            </ul>
-                        </div>
-
-                        <!-- Área de comentario -->
-                        <div class="text-center">
-                            <textarea name="comentarios" rows="6" cols="50" placeholder="Introduce un mensaje sobre este usuario"
-                                required></textarea>
-                            <br>
-                            <button class="btn-form badge mt-3 mb-3">Enviar</button>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
-    </div>
     </section>
 
 @endsection

@@ -11,7 +11,13 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         Category::create(['name' => 'Front-end', 'color' => '#ff0000']);
-        Category::create(['name' => 'Maricon', 'color' => '#8000FF']);
-        Category::create(['name' => 'Java', 'color' => '#0000ff']);
+        Category::create(['name' => 'Maricón', 'color' => '#8000FF']);
+        Category::create(['name' => 'Gay', 'color' => '#D394E9']);
+        Category::create(['name' => 'Bujarra', 'color' => '#B594E9']);
+        Category::create(['name' => 'Laravel', 'color' => '#F05340']);
+        Category::create(['name' => 'Guapo', 'color' => '#A9DFBF']);
+        Category::create(['name' => 'Listo', 'color' => '#A2D9CE']);
+        Category::create(['name' => 'Aplicado', 'color' => '#A3E4D7']);
+        Category::create(['name' => 'Ordenado', 'color' => '#AED6F1']);
     }
 }

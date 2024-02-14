@@ -28,5 +28,32 @@ class UsersTableSeeder extends Seeder
             'about' => 'Joder soy Luis motherfuking Verga',
             'admin' => false,
         ]);
+
+        User::create([
+            'name' => 'Torovi',
+            'email' => 'Torovi@Maricon.es',
+            'password' => Hash::make('Torovi'),
+            'image' =>  'images/users/gitano.webp',
+            'about' => 'Heeeyyy nena ¿Quieres sexo del prematuro?',
+            'admin' => false,
+        ]);
+
+        User::create([
+            'name' => 'Cutiman',
+            'email' => 'Cuti@Man.org',
+            'password' => Hash::make('Cutiman'),
+            'image' =>  'images/users/cutiman.jpg',
+            'about' => 'Hey tios, me encanta robar trabajos y romper dedos, un saludo.',
+            'admin' => false,
+        ]);
+
+        User::create([
+            'name' => 'Rafax',
+            'email' => 'Rafa@Guapisimo.sexual',
+            'password' => Hash::make('Rafax'),
+            'image' =>  'images/users/prros.jpg',
+            'about' => 'Bueno que decir del mejor y más guapo desarrollador de Ilerna Sevilla y de Atexis',
+            'admin' => false,
+        ]);
     }
 }
