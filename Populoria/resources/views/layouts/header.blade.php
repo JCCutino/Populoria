@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
 
-    <link rel="shortcut icon" href="{{asset("images/Populoria.svg")}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('images/Populoria.svg') }}" type="image/x-icon">
 
     {{-- Aqui está bootstrap --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -32,16 +32,19 @@
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-around w-100">
 
-                <a href="{{route("projects.index")}}">Buscar proyectos</a>
-                <a href="adminProyect.php">Mis proyectos</a>
+                <a href="{{ route('projects.index') }}">Buscar proyectos</a>
+                {{-- Esta sección la eliminaba del header y la debaja solo en el perfil --}}
+                <a href="/home">Mis proyectos</a>
 
-                <a href="landingPage.php"
+                <a href="{{ route('home') }}"
                     class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none icon">
-                    <img src="{{asset("images/Populoria.svg")}}" alt="Populoria-Logo" class="img-fluid icon">
+                    <img src="{{ asset('images/Populoria.svg') }}" alt="Populoria-Logo" class="img-fluid icon">
                 </a>
 
-                <a href="perfilUsuario.php">Perfil</a>
-                <a href="landingPage.php">Cerrar sesión</a>
+                {{-- Este enlace hay que cambiarlo por Auth::user()->id cuando tengamos autenticación --}}
+                <a href="{{ route('users.show', 1) }}">Perfil</a>
+                {{-- Este hay que cambiarlo también --}}
+                <a href="{{ route('welcome') }}">Cerrar sesión</a>
 
             </div>
         </div>

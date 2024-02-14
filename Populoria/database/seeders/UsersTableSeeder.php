@@ -16,6 +16,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'admin@admin.com',
             'password' => Hash::make('admin'),
             'image' =>  'images/users/default-icon.webp',
+            'about' => 'Soy el admin chavales',
             'admin' => true,
         ]);
 
@@ -24,6 +25,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'Luis@Verga.com',
             'password' => Hash::make('Luis'),
             'image' =>  'images/users/Yo.JPG',
+            'about' => 'Joder soy Luis motherfuking Verga',
             'admin' => false,
         ]);
     }

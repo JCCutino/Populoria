@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 //Rutas para el landing page
 Route::get('/', function () {
     return view('welcome');
-});
+})->name("welcome");
 
 //rutas para el home
 Route::get('/home', function () {

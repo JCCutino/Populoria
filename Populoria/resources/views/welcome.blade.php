@@ -40,7 +40,7 @@
                                         class="btn btn-primary  btn-block">Registro</button></a>
                             </div>
                             <div class="col-md-4 mt-5">
-                                <a href="{{route("home")}}"> <button type="button"
+                                <a href="{{ route('home') }}"> <button type="button"
                                         class="btn btn-success  btn-block">Home</button></a>
                             </div>
                             <div class="col-md-4 mt-5  ">
@@ -82,11 +82,22 @@
 
                 @foreach ($users as $user)
                     <li class="badge">{{ $user->name }}</li>
+                    <li class="badge">{{ $user->about }}</li>
                     <li class="badge">{{ $user->email }}</li>
                     <img class="img-fluid w-25" src="{{ asset($user->image) }}" alt="{{ $user->name }}">
+
                     <h4 class="text-danger">Categorías del usuario</h4>
                     @foreach ($user->categories as $category)
                         <li class="badge" style="background-color: {{ $category->color }}">{{ $category->name }}</li>
+                    @endforeach
+                    <h4 class="text-danger">Proyectos del usuario</h4>
+                    @foreach ($user->projects as $project)
+                        <div class="text-center w-25">
+                            <h5 class="bg-success rounded px-2 my-2">{{ $project->name }}</h5>
+                            <p class="bg-success rounded px-2 my-2">{{ $project->description }}</p>
+                            <p class="bg-success rounded px-2 my-2">{{ $project->looking }}</p>
+                            <p class="bg-success rounded px-2 my-2">{{ $project->progress }}</p>
+                        </div>
                     @endforeach
                     <hr>
                 @endforeach
