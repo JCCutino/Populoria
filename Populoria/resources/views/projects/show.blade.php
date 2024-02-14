@@ -7,6 +7,10 @@
     <link href="{{ asset('styles/style.css') }}" rel="stylesheet">
 @endsection
 
+@php
+    use App\Models\User;
+@endphp
+
 @section('content')
     <article class="d-flex flex-column proyect-article h-75">
         <section class="d-flex justify-content-between align-content-center mt-5 h-50">
@@ -60,17 +64,20 @@
                     <div class="contenedor">
                         <!-- Sección de comentarios -->
                         <section class="mt-5">
-                            <h3>Sección de comentarios</h3>
+
+
+
+
+
 
                             <!-- Mostrar comentarios -->
                             <div class="comentarios-container mb-4">
                                 <h4>Comentarios de otros usarios:</h4>
                                 <ul class="list-unstyled">
-                                    <li><strong>NombreUsuario (Juancc12):</strong> Lorem ipsum dolor sit amet.</li>
-                                    <li><strong>NombreUsuario (LuisYerga):</strong> Consectetur adipiscing elit.</li>
-                                    <li><strong>NombreUsuario (Toroviejo):</strong> Sed do eiusmod tempor incididunt ut
-                                        labore
-                                        et dolore magna aliqua.</li>
+                                    @foreach ($project->comments as $comment)
+                                        <li><strong>{{ User::find($comment->user_id)->name }} :</strong>
+                                            {{ $comment->text }}</li>
+                                    @endforeach
                                 </ul>
                             </div>
 

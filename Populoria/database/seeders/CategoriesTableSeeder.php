@@ -10,7 +10,7 @@ class CategoriesTableSeeder extends Seeder
 {
     public function run()
     {
-        Category::create(['name' => 'Front-end', 'color' => '#ff0000']);
+        Category::create(['name' => 'Prematuro', 'color' => '#ff0000']);
         Category::create(['name' => 'Maricón', 'color' => '#8000FF']);
         Category::create(['name' => 'Gay', 'color' => '#D394E9']);
         Category::create(['name' => 'Bujarra', 'color' => '#B594E9']);
