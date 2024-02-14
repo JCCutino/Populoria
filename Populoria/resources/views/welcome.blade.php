@@ -46,6 +46,87 @@
                 </div>
             </div>
         </div>
+
+        <div class="text-white">
+
+
+            <h1>Datos de prueba para comprobar que funcionan los seeders</h1>
+
+            @php
+                use App\Models\Category;
+                use App\Models\Project;
+                use App\Models\User;
+                $categories = Category::all();
+                $users = User::all();
+                $projects = Project::all();
+            @endphp
+
+            <ul>
+                <h3>Categorias</h3>
+
+                @foreach ($categories as $category)
+                    <li class="badge" style="background-color: {{ $category->color }}">{{ $category->name }}</li>
+                    <hr>
+                @endforeach
+
+            </ul>
+
+            <ul>
+                <h3>Usuarios</h3>
+
+                @foreach ($users as $user)
+                    <li class="badge">{{ $user->name }}</li>
+                    <li class="badge">{{ $user->email }}</li>
+                    <li class="badge">{{ $user->name }}</li>
+                    <li class="badge">{{ $user->name }}</li>
+                    <img class="img-fluid w-25" src="{{ asset($user->image) }}" alt="{{ $user->name }}">
+                    <hr>
+                @endforeach
+
+            </ul>
+
+            <ul>
+                <h3>Proyectos</h3>
+
+                @foreach ($projects as $project)
+                    <li class="badge">{{ $project->name }}</li>
+                    <li class="badge">{{ $project->description }}</li>
+                    <li class="badge">{{ $project->looking }}</li>
+                    <li class="badge">{{ $project->progress }}</li>
+
+                    <h4 class="text-danger">Imágenes dentro del proyecto</h4>
+
+                    @foreach ($project->images as $image)
+                        <img src="{{ $image->url }}" alt="{{ $image->name }}">
+                    @endforeach
+
+                    <h4 class="text-danger">Categorias dentro del proyecto</h4>
+
+                    @foreach ($project->categories as $category)
+                        <li class="badge" style="background-color: {{ $category->color }}">{{ $category->name }}</li>
+                    @endforeach
+
+                    <h4 class="text-danger">Usuarios dentro del proyecto</h4>
+
+                    @foreach ($project->users as $user)
+                        <li class="badge">{{ $user->name }}</li>
+                        <li class="badge">{{ $user->email }}</li>
+                        <li class="badge">{{ $user->name }}</li>
+                        <li class="badge">{{ $user->name }}</li>
+                        <img class="img-fluid w-25" src="{{ asset($user->image) }}" alt="{{ $user->name }}">
+                    @endforeach
+
+                    <h4 class="text-danger">Mensajes dentro del proyecto</h4>
+
+                    @foreach ($project->comments as $comment)
+                        <li class="badge">{{ $comment->text }}</li>
+                        <li class="badge">Nombre del emisor: {{ User::find($comment->user_id)->name }}</li>
+                    @endforeach
+                    <hr>
+                @endforeach
+
+            </ul>
+        </div>
     </main>
 </body>
 
