@@ -1,0 +1,1 @@
+{{-- Esta sería la página para editar tu propio perfil --}}

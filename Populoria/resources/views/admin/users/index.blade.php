@@ -1,0 +1,1 @@
+{{-- Vista de panel de control del admin para listar todos los elementos y modificarlos --}}

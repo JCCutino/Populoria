@@ -27,7 +27,7 @@
                     <div class="d-flex images">
                         <img src="image/Populoria.png" alt="" class="s-other-display">
                         <img src="image/Populoria.png" alt="" class="s-other-display">
-                        <img src="image/Populoria.png" alt="" class="s-other-display">
+                        <img src="image/Populoria.png" alt="" class="s-other-display">a
                     </div>
                 </div>
                 <div class="title w-75 mx-5 bg-color-gray">

@@ -9,7 +9,7 @@
                 <img src="image/Populoria.svg" alt="Populoria-Logo" class="img-fluid icon">
             </a>
 
-            <a href="perfilUsuario.php">Perfil</a>
+            <a href="perfilUsuario.php">Perfil</a>a
             <a href="landingPage.php">Cerrar sesión</a>
 
         </div>
