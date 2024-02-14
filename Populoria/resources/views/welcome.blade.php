@@ -77,23 +77,26 @@
                 @foreach ($users as $user)
                     <li class="badge">{{ $user->name }}</li>
                     <li class="badge">{{ $user->email }}</li>
-                    <li class="badge">{{ $user->name }}</li>
-                    <li class="badge">{{ $user->name }}</li>
                     <img class="img-fluid w-25" src="{{ asset($user->image) }}" alt="{{ $user->name }}">
+                    <h4 class="text-danger">Categorías del usuario</h4>
+                    @foreach ($user->categories as $category)
+                        <li class="badge" style="background-color: {{ $category->color }}">{{ $category->name }}</li>
+                    @endforeach
                     <hr>
                 @endforeach
-
             </ul>
 
-            <ul>
+            <div class="mx-5">
+
                 <h3>Proyectos</h3>
 
                 @foreach ($projects as $project)
-                    <li class="badge">{{ $project->name }}</li>
-                    <li class="badge">{{ $project->description }}</li>
-                    <li class="badge">{{ $project->looking }}</li>
-                    <li class="badge">{{ $project->progress }}</li>
-
+                    <div class="text-center w-25">
+                        <h5 class="bg-success rounded px-2 my-2">{{ $project->name }}</h5>
+                        <p class="bg-success rounded px-2 my-2">{{ $project->description }}</p>
+                        <p class="bg-success rounded px-2 my-2">{{ $project->looking }}</p>
+                        <p class="bg-success rounded px-2 my-2">{{ $project->progress }}</p>
+                    </div>
                     <h4 class="text-danger">Imágenes dentro del proyecto</h4>
 
                     @foreach ($project->images as $image)
@@ -103,16 +106,14 @@
                     <h4 class="text-danger">Categorias dentro del proyecto</h4>
 
                     @foreach ($project->categories as $category)
-                        <li class="badge" style="background-color: {{ $category->color }}">{{ $category->name }}</li>
+                        <p class="badge" style="background-color: {{ $category->color }}">{{ $category->name }}</p>
                     @endforeach
 
                     <h4 class="text-danger">Usuarios dentro del proyecto</h4>
 
                     @foreach ($project->users as $user)
-                        <li class="badge">{{ $user->name }}</li>
-                        <li class="badge">{{ $user->email }}</li>
-                        <li class="badge">{{ $user->name }}</li>
-                        <li class="badge">{{ $user->name }}</li>
+                        <p class="badge">{{ $user->name }}</p>
+                        <p class="badge">{{ $user->email }}</p>
                         <img class="img-fluid w-25" src="{{ asset($user->image) }}" alt="{{ $user->name }}">
                     @endforeach
 
@@ -120,12 +121,11 @@
 
                     @foreach ($project->comments as $comment)
                         <li class="badge">{{ $comment->text }}</li>
-                        <li class="badge">Nombre del emisor: {{ User::find($comment->user_id)->name }}</li>
+                        <li class="badge">Nombre del emisor: {{ User::find($comment->user_id)->name }} (no la tortuga ninja)</li>
                     @endforeach
                     <hr>
                 @endforeach
-
-            </ul>
+            </div>
         </div>
     </main>
 </body>

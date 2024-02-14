@@ -13,8 +13,8 @@ class CommentsTableSeeder extends Seeder
     public function run()
     {
         Comment::create([
-            'text' => 'Este es un comentario de ejemplo.',
-            'user_id' => 1,
+            'text' => 'Sois tontos y gays que lo sepáis.',
+            'user_id' => 2,
             'project_id' => 1,
         ]);
     }
