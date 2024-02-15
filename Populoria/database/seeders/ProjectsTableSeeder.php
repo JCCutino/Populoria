@@ -10,6 +10,14 @@ class ProjectsTableSeeder extends Seeder
 {
     public function run()
     {
+
+        Project::create([
+            'name'=> 'chat',
+            'description' => 'Esto es un foro',
+            'looking' => 'Ya me he cansado de inventar cosas',
+            'progress' => 'Finalizado',
+        ]);
+
         Project::create([
             'name' => 'Populoria',
             'description' => 'Populoria Hub se presenta como la vanguardia en la colaboración creativa al conectar a programadores y diseñadores a través de ideas de proyectos emocionantes. Esta plataforma, bajo el nombre de Populoria, tiene como objetivo principal actuar como el epicentro donde las ideas innovadoras cobran vida gracias a la sinergia entre creadores y profesionales en desarrollo y diseño.',

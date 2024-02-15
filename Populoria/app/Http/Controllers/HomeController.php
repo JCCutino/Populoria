@@ -3,14 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Category;
+use App\Models\Comment;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $categories = Category::all();
+        $comments = Comment::where('project_id', 1)->get();
 
-        return view('welcome', compact('categories'));
+        return view('home', compact('comments'));
+    }
+
+    public function saveComment(Request $request){
+        $request->validate(['comment'=>'required', 'user_id'=>'required']);
+        $newComment= new Comment();
+        $newComment->text=$request->comment;
+        $newComment->user_id=$request->user_id;
+        $newComment->project_id=1;
+        $newComment->save();
+        return back();
     }
 }
