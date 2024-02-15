@@ -37,5 +37,12 @@ class ProjectsTableSeeder extends Seeder
             'looking' => 'Ya me he cansado de inventar cosas',
             'progress' => 'Finalizado',
         ]);
+
+        Project::create([
+            'name'=> 'chat',
+            'description' => 'Esto es un foro',
+            'looking' => 'Ya me he cansado de inventar cosas',
+            'progress' => 'Finalizado',
+        ]);
     }
 }

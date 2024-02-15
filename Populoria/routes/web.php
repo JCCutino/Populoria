@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -21,11 +22,6 @@ Route::get('/', function () {
     return view('welcome');
 })->name("welcome");
 
-//rutas para el home
-Route::get('/home', function () {
-    return view('home');
-})->name("home");
-
 //Rutas para los proyectos
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
 Route::get('/projects/create', [ProjectController::class, 'create'])->name('projects.create');
@@ -38,6 +34,8 @@ Route::get('/users/create', [UserController::class, 'create'])->name('users.crea
 Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
 Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
 
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::post('/saveComment' ,[HomeController::class ,'saveComment'])->name('save.comment');
 
 Route::middleware(['auth'])->group(function () {
     //todos los metodos los tendríamos que meter aquí dentro una vez hechos los perfiles de usuario
