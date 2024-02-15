@@ -79,9 +79,6 @@ header p {
     text-align: center;
 }
 
-body {
-    background-color: #666666;
-}
 
 #foto {
     background-color: #000000;
@@ -160,4 +157,22 @@ button a {
 .project:hover {
     transform: scale(1.1);
     box-shadow: 2px 2px 2px black;
+}
+
+.no-cursor {
+    cursor: default;
+}
+
+.colaborators{
+    width: 80%;
+    height: auto;
+    aspect-ratio: 1/1; /* Establece la relación de aspecto 1:1 para hacer las imágenes cuadradas */
+    border-radius: 50%;
+    max-width: 150px;
+}
+
+@media (max-width: 640px) {
+    .colaborators{
+        max-width: 100px;
+    }
 }

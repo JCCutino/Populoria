@@ -34,12 +34,12 @@ class CommentsTableSeeder extends Seeder
         ]);
         Comment::create([
             'text' => 'Me pregunto a quien le podré robar el trabajo hoy...',
-            'user_id' => 4,
+            'user_id' => 5,
             'project_id' => 1,
         ]);
         Comment::create([
             'text' => 'Chicos ya he acabado la página web de forma prematura totalmente solo y en un día, un saludo',
-            'user_id' => 5,
+            'user_id' => 4,
             'project_id' => 1,
         ]);
     }
