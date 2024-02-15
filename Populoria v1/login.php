@@ -29,19 +29,7 @@
 </header>
 
 <main>
-    <section id="registro">
-        <div class="container">
-            <form action="" method="post" class="registro-form">
-                <h2>Logueate</h2>
-              
-                <label for="email">Email:</label>
-                <input id="email" type="text" name="email">
-                <label for="contrasena">Contraseña:</label>
-                <input id="contrasena" type="text" name="contrasena">
-                <button><a href="listaProyectos.php">Iniciar sesion    </a></button>
-            </form>
-        </div>
-    </section>
+  
 </main>
 
         <footer>
