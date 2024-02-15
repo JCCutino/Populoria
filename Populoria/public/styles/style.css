@@ -161,3 +161,10 @@ button a {
     transform: scale(1.1);
     box-shadow: 2px 2px 2px black;
 }
+
+.messages{
+    background-color: #7fc089;
+    max-width: 30vw;
+    margin-left: auto;
+    margin-right: auto;
+}

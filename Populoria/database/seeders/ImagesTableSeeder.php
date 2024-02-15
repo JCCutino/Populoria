@@ -12,26 +12,21 @@ class ImagesTableSeeder extends Seeder
     {
         Image::create([
             'url' => 'images/projects/Don_Kamaron.png',
-            'project_id' => 1,
+            'project_id' => 2,
         ]);
 
         Image::create([
             'url' => 'images/projects/mauroResized.jpeg',
-            'project_id' => 1,
+            'project_id' => 2,
         ]);
 
         Image::create([
             'url' => 'images/projects/peaceo.jpg',
-            'project_id' => 1,
+            'project_id' => 2,
         ]);
 
         Image::create([
             'url' => 'images/projects/unnamed.png',
-            'project_id' => 1,
-        ]);
-
-        Image::create([
-            'url' => 'images/projects/mauroResized.jpeg',
             'project_id' => 2,
         ]);
 
@@ -43,6 +38,11 @@ class ImagesTableSeeder extends Seeder
         Image::create([
             'url' => 'images/projects/mauroResized.jpeg',
             'project_id' => 4,
+        ]);
+
+        Image::create([
+            'url' => 'images/projects/mauroResized.jpeg',
+            'project_id' => 5,
         ]);
     }
 }

@@ -11,22 +11,22 @@ class ProjectUserSeeder extends Seeder
     public function run()
     {
         DB::table('project_user')->insert([
-            'project_id' => 1,
+            'project_id' => 2,
             'user_id' => 2,
         ]);
         
         DB::table('project_user')->insert([
-            'project_id' => 1,
+            'project_id' => 2,
             'user_id' => 3,
         ]);
 
         DB::table('project_user')->insert([
-            'project_id' => 1,
+            'project_id' => 2,
             'user_id' => 4,
         ]);
 
         DB::table('project_user')->insert([
-            'project_id' => 1,
+            'project_id' => 2,
             'user_id' => 5,
         ]);
     }

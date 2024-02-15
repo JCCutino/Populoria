@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $comments = Comment::all();
+        $comments = Comment::where('project_id', 1)->get();
 
         return view('home', compact('comments'));
     }
@@ -19,7 +19,7 @@ class HomeController extends Controller
         $newComment= new Comment();
         $newComment->text=$request->comment;
         $newComment->user_id=$request->user_id;
-        $newComment->project_id=5;
+        $newComment->project_id=1;
         $newComment->save();
         return back();
     }

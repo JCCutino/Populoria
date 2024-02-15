@@ -36,6 +36,7 @@ Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show')
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::post('/saveComment' ,[HomeController::class ,'saveComment'])->name('save.comment');
+Route::post('/saveCommentProject' ,[ProjectController::class ,'saveCommentProject'])->name('save.commentProject');
 
 Route::middleware(['auth'])->group(function () {
     //todos los metodos los tendríamos que meter aquí dentro una vez hechos los perfiles de usuario
