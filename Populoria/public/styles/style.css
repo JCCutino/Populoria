@@ -5,8 +5,8 @@ body {
 .contenedor {
     background-color: #d9d9d9;
     margin-top: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Aplica una sombra difuminada */
 }
 
 .badge {
@@ -169,6 +169,10 @@ button a {
     aspect-ratio: 1/1; /* Establece la relación de aspecto 1:1 para hacer las imágenes cuadradas */
     border-radius: 50%;
     max-width: 150px;
+}
+
+.img-project{
+    max-width: 350px;
 }
 
 @media (max-width: 640px) {

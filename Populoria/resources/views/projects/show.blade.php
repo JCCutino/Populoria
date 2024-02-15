@@ -14,11 +14,11 @@ use App\Models\User;
 @section('content')
 <article class="d-flex flex-column proyect-article h-75">
     <div class="container-fluid">
-        <div class="row d-flex align-items-center">
+        <div class="row d-flex justify-content-center align-items-center">
             <div class="col-lg-4 col-md-6 mx-auto">
                 <div class="d-flex ">
-                    <div class="gallery mx-auto bg-color-gray d-flex flex-column my-3">
-                        <img src="{{ asset($project->images->first()->url) }}" alt="{{ $project->images->first()->name }}" class="img-fluid">
+                    <div class="gallery mx-auto bg-color-gray d-flex flex-column my-3 contenedor">
+                        <img src="{{ asset($project->images->first()->url) }}" alt="{{ $project->images->first()->name }}" class="img-project img-fluid">
                         <div class="d-flex flex-wrap images">
                             @foreach ($project->images as $image)
                             <img src="{{ asset($image->url) }}" alt="{{ $image->name }}" class="s-other-display img-fluid">
@@ -29,8 +29,8 @@ use App\Models\User;
             </div>
 
             <div class="col-lg-8 col-md-6 mx-auto my-3">
-                <div class="d-flex">
-                    <div class="title bg-color-gray d-flex flex-column justify-content-between">
+                <div class="d-flex justify-content-center">
+                    <div class="title bg-color-gray d-flex flex-column justify-content-between contenedor">
                         <div class="">
                             <h1 class="mb-3 mx-2">{{ $project->name }}</h1> <!-- Añadir un margen inferior -->
                             <p class="mb-4 mx-2">{{ $project->description }}</p> <!-- Añadir un margen inferior -->
@@ -46,7 +46,7 @@ use App\Models\User;
 
     <div class="container-fluid">
         <div class="row d-flex align-items-center">
-            <div class="lookingfor col-lg-8 col-md-12">
+            <div class="lookingfor col-lg-8 col-md-12 contenedor">
                 <div class="w-100 mx-auto bg-color-gray">
                     <div class="row">
                         <div class="col-md-6 py-3">
@@ -66,7 +66,7 @@ use App\Models\User;
             </div>
 
             <div class="collab col-lg-4 col-md-12">
-                <div class="w-100 mx-auto bg-color-gray my-5 py-3">
+                <div class="w-100 mx-auto bg-color-gray my-5 py-3 contenedor">
                     <h1>Colaboradores</h1>
                     <div class="row">
                         @php $count = 0 @endphp
