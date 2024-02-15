@@ -1,54 +1,69 @@
-.bodyCrear{
-    background-color: #1E1E1E;
+.bodyCrear {
+    background-color: #1e1e1e;
     color: white;
 }
-.bodyLista{
+.bodyLista {
     background-color: #666666;
     color: black;
 }
-#fotoLogo{
+#fotoLogo {
     width: 25%;
 }
 
-h3{
+h3 {
     font-size: 50px;
 }
 
-#creacion{
+#creacion {
     background-color: #666666;
     border-radius: 0.8rem;
 }
 
-.crearProyecto{
+.crearProyecto {
     background-color: #ffffff;
 }
 
-.proyectos{
-    background-color: #D9D9D9;
-    margin-left: 10%; 
-    margin-right: 10%; 
+.proyectos {
+    background-color: #d9d9d9;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
-.badge{
+.badge {
     width: 100px;
     height: 25px;
 }
 
-#colaboradores img{
+#colaboradores img {
     border-radius: 5.8rem;
     width: 35%;
 }
 
-
 @media only screen and (max-width: 1300px) {
-    #lista{
-        display:block;
+    #lista {
+        display: block;
         text-align: center;
         justify-content: center;
     }
 }
 
-.project:hover{
+.project:hover {
     transform: scale(1.1);
     box-shadow: 2px 2px 2px black;
 }
+
+.tecnologiesContainer {
+    background-color: #cdffc3;
+    height: 100px;
+    overflow: auto;
+    padding: 5px;
+}
+
+.tecnologies {
+    margin-top: 5px;
+    background-color: #eee;
+    border-radius: 20px;
+    padding-bottom: 15px;
+    padding-top: 5px;
+}
+

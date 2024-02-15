@@ -26,9 +26,12 @@ Route::get('/home', function () {
     return view('home');
 })->name("home");
 
+
+
 //Rutas para los proyectos
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
-Route::get('/projects/create', [ProjectController::class, 'create'])->name('projects.create');
+Route::get('/projects/create', [ProjectController::class, 'createView'])->name('projects.create');
+Route::post('/projects/create/new', [ProjectController::class, 'createProject'])->name('projects.createNew');
 Route::get('/projects/{project}/edit', [ProjectController::class, 'edit'])->name('projects.edit');
 Route::get('/projects/{project}', [ProjectController::class, 'show'])->name('projects.show');
 

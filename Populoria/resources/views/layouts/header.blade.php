@@ -23,7 +23,6 @@
 
     {{-- Aquí están el css principal y el js principal --}}
     <link href="{{ asset('styles/header.css') }}" rel="stylesheet">
-    <script defer src="{{ asset('js/app.js') }}"></script>
     @yield('links')
 </head>
 
@@ -34,7 +33,7 @@
 
                 <a href="{{ route('projects.index') }}">Buscar proyectos</a>
                 {{-- Esta sección la eliminaba del header y la debaja solo en el perfil --}}
-                <a href="/home">Mis proyectos</a>
+                <a href="{{ route('projects.create') }}">Crear Proyecto</a>
 
                 <a href="{{ route('home') }}"
                     class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none icon">

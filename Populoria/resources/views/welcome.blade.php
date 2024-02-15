@@ -25,7 +25,6 @@
 
     {{-- Aquí están el css principal y el js principal --}}
     <link href="{{ asset('styles/style.css') }}" rel="stylesheet">
-    <script defer src="{{ asset('js/app.js') }}"></script>
     <script defer src="{{ asset('js/welcome.js') }}"></script>
 
 </head>
