@@ -50,8 +50,8 @@ use App\Models\User;
                 <div class="w-100 mx-auto bg-color-gray">
                     <div class="row">
                         <div class="col-md-6 py-3">
-                            <h1 class="">Descripción</h1>
-                            <p class="mb-2 p-4">{{ $project->description }}</p>
+                            <h1 class="">Necesitamos</h1>
+                            <p class="mb-2 p-4">{{ $project->looking }}</p>
                         </div>
                         <div class="col-md-6 ">
                             <h1 class="">Tecnologías Requeridas</h1>

@@ -18,11 +18,11 @@ use Illuminate\Support\Str;
             <div class="col-md-5 contenedor" id="user-container">
                 <section>
                     <div class="row">
-                        <div class="col-md-6">
-                            <img src="{{ asset($user->image) }}" class="img-fluid">
+                        <div class="col-md-6 d-flex justify-content-center">
+                            <img src="{{ asset($user->image) }}" class="img-fluid img-user mt-3">
                         </div>
                         <div class="col-md-6">
-                            <h3>{{ $user->name }}</h3>
+                            <h3 class="my-3">{{ $user->name }}</h3>
                             <p>{{ $user->about }}</p>
                         </div>
                     </div>
@@ -34,7 +34,7 @@ use Illuminate\Support\Str;
             <!-- Contenedor de tecnologías -->
             <div class="col-md-5 contenedor align-items-center" id="tech-container" style="margin-left: auto;">
                 <section>
-                    <h3 class="mb-4">Tus tecnologías</h3>
+                    <h3 class="mb-4 mt-3">Tus tecnologías</h3>
                     <div class="row justify-content-center mt-4">
                         @foreach ($user->categories as $category)
                             <div class="col-md-6">
@@ -55,7 +55,7 @@ use Illuminate\Support\Str;
         <div class="row">
             <div class="col-md-12">
                 <div class="contenedor">
-                    <h3>Tus proyectos</h3>
+                    <h3 class="my-3">Tus proyectos</h3>
                     @foreach ($user->projects as $project)
                         <div class="row align-items-center">
                             <div class="col-md-8">

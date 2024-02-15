@@ -170,13 +170,30 @@ button a {
     border-radius: 50%;
     max-width: 150px;
 }
+.colaborators-project{
+    width: 80%;
+    height: auto;
+    aspect-ratio: 1/1; /* Establece la relación de aspecto 1:1 para hacer las imágenes cuadradas */
+    border-radius: 50%;
+    max-width: 150px;
+}
 
 .img-project{
     max-width: 350px;
 }
 
+.img-user{
+    width: 80%;
+    height: auto;
+    aspect-ratio: 1/1; /* Establece la relación de aspecto 1:1 para hacer las imágenes cuadradas */
+    border-radius: 50%;
+}
 @media (max-width: 640px) {
     .colaborators{
         max-width: 100px;
+    }
+
+    .img-user{
+        max-width: 150px;
     }
 }
