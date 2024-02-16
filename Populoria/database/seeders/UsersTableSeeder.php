@@ -22,8 +22,8 @@ class UsersTableSeeder extends Seeder
 
         User::create([
             'name' => 'Luis Verga',
-            'email' => 'Luis@Verga.com',
-            'password' => Hash::make('Luis'),
+            'email' => 'a@a.a',
+            'password' => Hash::make('a'),
             'image' =>  'images/users/Yo.JPG',
             'about' => 'Joder soy Luis motherfuking Verga',
             'admin' => false,

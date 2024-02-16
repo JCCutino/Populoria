@@ -19,6 +19,19 @@
                     <div class="d-flex w-100 justify-content-around align-items-center">
                         <img class="image-fluid w-25" src="{{ asset($user->image) }}" alt="{{ $user->name }}">
                         <p>{{ $user->name }}</p>
+
+                        <form action="{{route("projects.request.manage", $project->id)}}" method="post">
+                            @csrf
+                            <input type="hidden" name="user_id" value="{{$user->id}}">
+                            <input hidden type="checkbox" name="deny" value="1" checked>
+                            <button class="btn btn-danger">Denegar</button>
+                        </form>
+                        <form action="{{route("projects.request.manage", $project->id)}}" method="post">
+                            @csrf
+                            <input type="hidden" name="user_id" value="{{$user->id}}">
+                            <input hidden type="checkbox" name="deny" value="0" checked>
+                            <button class="btn btn-success">Aceptar</button>
+                        </form>
                         <button type="button" class="badge rounded-pill bg-success h-100" data-bs-toggle="modal"
                             data-bs-target="#exampleModal">
                             👁️
@@ -34,7 +47,9 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <a href="{{ route('users.show', $user->id) }}"><img class="img-fluid w-25 userImage rounded-circle" src="{{ asset($user->image) }}" alt="{{ $user->name }}"></a>
+                                    <a href="{{ route('users.show', $user->id) }}"><img
+                                            class="img-fluid w-25 userImage rounded-circle" src="{{ asset($user->image) }}"
+                                            alt="{{ $user->name }}"></a>
                                     <div>
                                         <li class="badge">{{ $user->name }}</li>
                                         <li class="badge">{{ $user->about }}</li>

@@ -65,15 +65,37 @@
                                         <h4>{{ $project->name }}: {{ str::limit($project->description, 30) }}</h4>
                                     </a>
                                 </div>
-                                
+
                                 <div class="col-md-2 d-flex">
-                                    @if ($user->id ===  Auth::user()->id)
-                                    <a href="{{ route('projects.manage', $project->id) }}">
-                                        <button class="btn btn-success mb-3">Ver solicitudes</button>
+                                    @if ($project->pivot->status === 'owner')
+                                        <a href="{{ route('projects.manage', $project->id) }}">
+                                            <button class="btn btn-success mb-3">Ver solicitudes</button>
+                                        </a>
+                                        <a href="{{ route('projects.edit', $project->id) }}"><button
+                                                class="btn btn-primary">Editar</button></a>
+                                    @endif
+                                </div>
+
+                                <div class="col-md-4 text-end">
+                                    <span
+                                        class="{{ $project->progress }} d-flex align-items-center justify-content-center mb-2 mr-2">{{ $project->progress }}</span>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+                    <hr>
+                    <h3 class="my-3">Proyectos pendientes de aprobación</h3>
+                    @foreach ($user->projects as $project)
+                        @if ($project->pivot->status === 'pending')
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <a class="text-primary" href="{{ route('projects.show', $project->id) }}">
+                                        <h4>{{ $project->name }}: {{ str::limit($project->description, 30) }}</h4>
                                     </a>
-                                    <a href="{{ route('projects.edit', $project->id) }}"><button
-                                        class="btn btn-primary">Editar</button></a>
-                                @endif
+                                </div>
+
+                                <div class="col-md-2">
+
                                 </div>
 
                                 <div class="col-md-4 text-end">

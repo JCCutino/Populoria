@@ -38,6 +38,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/projects/{project}/users', [ProjectController::class, 'manageUsers'])->name('projects.manage');
     Route::get('/projects/{project}/edit', [ProjectController::class, 'edit'])->name('projects.edit');
     Route::get('/projects/{project}/request', [ProjectController::class, 'request'])->name('projects.request');
+    Route::post('/projects/{project}/request/manage', [ProjectController::class, 'manage'])->name('projects.request.manage');
     Route::post('/logout', [HomeController::class, 'logout'])->name('logout');
     //Rutas para los usuarios
     Route::get('/users', [UserController::class, 'index'])->name('users.index');

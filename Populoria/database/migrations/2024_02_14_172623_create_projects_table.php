@@ -13,7 +13,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->text('looking');
-            $table->string('progress')->default("En proceso"); //Esto es para poner finalizado, en proceso
+            $table->string('progress')->default("Activo"); //Esto es para poner finalizado, en proceso
             $table->timestamps();
         });
     }

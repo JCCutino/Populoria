@@ -82,4 +82,17 @@ class ProjectController extends Controller
 
         return $this->show($newProject->id);
     }
+
+    public function manage($project_id, Request $request){
+        $project = Project::findOrFail($project_id);
+        $user = User::findOrFail($request->input("user_id"));
+        
+        if ($request->input("deny")){
+            $project->users()->detach($user->id);
+        }else{
+            $project->users()->updateExistingPivot($user->id, ['status' => 'accepted']);
+        }
+
+        return back();
+    }
 }
