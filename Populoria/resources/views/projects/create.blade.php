@@ -3,13 +3,13 @@
 @section('title', 'Crear proyecto')
 
 @section('links')
-    <link href="{{ asset('styles/luis.css') }}" rel="stylesheet">
+    <link href="{{ asset('styles/style.css') }}" rel="stylesheet">
     <script defer src="{{ asset('js/createProject.js') }}"></script>
 @endsection
 
 @section('content')
     <section class="align-items-center d-flex justify-content-center mt-5">
-        <div class="text-center justify-content-center">
+        <div class="text-center justify-content-center contenedor">
             <div class="container mt-5 p-5" id="creacion">
                 <div>
                     <h4 class="mb-4">Crear un nuevo proyecto</h4>
