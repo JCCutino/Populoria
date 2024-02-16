@@ -46,10 +46,13 @@
                             </div>
                             {{-- Cambiar por el id del usuario autenticado --}}
                             @if ($project->users->first()->id != 1)
-                                <a class="no-cursor" href="#"><button class="btn btn-success mb-3">Solicitar</button></a>
+                                <a class="no-cursor" href="#"><button
+                                        class="btn btn-success mb-3">Solicitar</button></a>
                             @elseif($project->users->first()->id == 1)
-                                <a href="{{ route('projects.edit', $project->id) }}"><button class="btn btn-success mb-3">Ver solicitudes</button></a>
+                                <a
+                                    href="{{ route('projects.edit', $project->id) }}"><button class="btn btn-success mb-3">Ver solicitudes</button></a>
                             @endif
+                            <a href="{{route("projects.edit", $project->id)}}"><button class="btn btn-primary">Editar</button></a>
                         </div>
                     </div>
                 </div>
@@ -76,33 +79,26 @@
         </div>
     </div>
 
-    <div class="container-fluid">
-        <div class="row justify-content-center"> <!-- Centrar el contenedor -->
-            <div class="collab col-12 col-lg-4 contenedor h-50"> <!-- Ajustado a col-12 y col-lg-6 para ocupar el 50% del ancho en pantallas grandes -->
-                <div class="w-100 mx-auto bg-color-gray mb-5 py-3"> <!-- Ancho al 100% y centrado horizontalmente -->
-                    <h1>Colaboradores</h1>
-                    <div class="row">
-                        @php $count = 0 @endphp
-                        @foreach ($project->users as $user)
-                            <div class="col-md-6 col-12"> <!-- Ajustado a col-12 -->
-                                <a class="mt-5" href="{{ route('users.show', $user->id) }}">
-                                    <img class="colaborators img-fluid w-100" src="{{ asset($user->image) }}"
-                                        alt="{{ $user->name }}">
-                                </a>
-                                <h5>{{ $user->name }}</h5>
-                            </div>
-                            @php $count++ @endphp
-                            @if ($count % 2 == 0 || $loop->last)
-                    </div>
-                    @if (!$loop->last)
+                <div class="collab col-lg-4 col-md-12">
+                    <div class="w-100 mx-auto bg-color-gray my-5 py-3 contenedor">
+                        <h1>Colaboradores</h1>
                         <div class="row">
-                    @endif
-                    @endif
-                    @endforeach
+                            @php $count = 0 @endphp
+                            @foreach ($project->users as $user)
+                                <div class="col-md-6 col-6">
+                                    <a href="{{ route('users.show', $user->id) }}">
+                                        <img class="colaborators img-fluid w-100" src="{{ asset($user->image) }}"
+                                            alt="{{ $user->name }}">
+                                    </a>
+                                    <p>{{ $user->name }}</p>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
-    </div>
 
 
 

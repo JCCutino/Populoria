@@ -29,6 +29,12 @@ class ProjectController extends Controller
         return view('projects.edit', compact('project'));
     }
 
+    public function manageUsers($id)
+    {
+        $project = Project::findOrFail($id);
+        return view('projects.manageUsers', compact('project'));
+    }
+
     public function saveCommentProject(Request $request){
         $request->validate(['comment'=>'required', 'user_id'=>'required', 'project_id'=>'required']);
         $newComment= new Comment();
@@ -53,7 +59,7 @@ class ProjectController extends Controller
         $newProject->looking = $request->input('looking');
         $newProject->save();
 
-        $newProject->users()->attach(User::findOrFail($request->input('user_id'), ['status' => 'owner']));
+        $newProject->users()->attach(User::findOrFail($request->input('user_id')), ['status' => 'owner']);
         $newProject->categories()->attach($request->input('categories'));
 
         

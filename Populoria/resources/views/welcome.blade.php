@@ -96,18 +96,13 @@
                         <img src="{{ asset('images/populoria.svg') }}" alt="Logo de Populoria">
                         <h1>POPULORIA</h1>
                         <div class="row">
-                            <div class="col-md-4 mt-5">
-                                <a href="registro.php"> <button type="button"
-                                        class="btn btn-primary  btn-block">Registro</button></a>
-                            </div>
+                          
                             <div class="col-md-4 mt-5">
                                 <a href="{{ route('home') }}"> <button type="button"
                                         class="btn btn-success  btn-block">Home</button></a>
                             </div>
-                            <div class="col-md-4 mt-5  ">
-                                <a href="login.php"> <button type="button"
-                                        class="btn btn-secondary  btn-block">Login</button></a>
-                            </div>
+                        
+                            
                         </div>
                     </div>
                 </div>
