@@ -18,7 +18,7 @@ use Illuminate\Support\Str;
             <div class="col-md-5 contenedor" id="user-container">
                 <section>
                     <div class="row">
-                        <div class="col-md-6 d-flex justify-content-center">
+                        <div class="col-md-6 d-flex justify-content-center my-4">
                             <img src="{{ asset($user->image) }}" class="img-fluid img-user mt-3">
                         </div>
                         <div class="col-md-6">
