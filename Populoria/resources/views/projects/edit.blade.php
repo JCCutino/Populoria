@@ -38,11 +38,11 @@
                                 <h1 class="mb-3 mx-2">{{ $project->name }}</h1> <!-- Añadir un margen inferior -->
                                 <p class="mb-4 mx-2">{{ $project->description }}</p> <!-- Añadir un margen inferior -->
                             </div>
-                            {{-- Cambiar por el id del usuario autenticado --}}
-                            @if ($project->users->first()->id != 1)
+                            
+                            @if ($project->users->first()->id != Auth::user()->id)
                                 <a class="no-cursor" href="#"><button
                                         class="btn btn-success mb-3">Solicitar</button></a>
-                            @elseif($project->users->first()->id == 1)
+                            @elseif($project->users->first()->id == Auth::user()->id)
                                 <a href="{{ route('projects.manage', $project->id) }}"><button
                                         class="btn btn-success mb-3">Ver solicitudes</button></a>
                             @endif

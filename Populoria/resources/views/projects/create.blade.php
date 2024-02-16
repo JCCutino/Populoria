@@ -54,8 +54,7 @@
                             <div class="btn btn-success mt-4" onclick="addPhoto()">Añadir otra foto</div>
                         </div>
 
-                        {{-- Cambiar por usuario cuando esté autenticado --}}
-                        <input type="hidden" name="user_id" value="1">
+                        <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                         <input class="mt-5 btn crearProyecto" type="submit" value="Publicar">
                     </form>
                 </div>
