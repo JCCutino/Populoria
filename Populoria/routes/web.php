@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/home', function () {
     return view('auth.dashboard');
     })->middleware('auth');
+
 //Rutas para el landing page
 Route::get('/', function () {
     return view('welcome');
@@ -26,7 +27,8 @@ Route::get('/', function () {
 
 
 
-//Rutas para los proyectos
+Route::middleware(['auth'])->group(function () {
+    //Rutas para los proyectos
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
 Route::get('/projects/create', [ProjectController::class, 'createView'])->name('projects.create');
 Route::post('/projects/create/new', [ProjectController::class, 'createProject'])->name('projects.createNew');
@@ -43,7 +45,4 @@ Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show')
 Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
 Route::post('/saveComment' ,[HomeController::class ,'saveComment'])->name('save.comment');
 Route::post('/saveCommentProject' ,[ProjectController::class ,'saveCommentProject'])->name('save.commentProject');
-
-Route::middleware(['auth'])->group(function () {
-    //todos los metodos los tendríamos que meter aquí dentro una vez hechos los perfiles de usuario
 });
