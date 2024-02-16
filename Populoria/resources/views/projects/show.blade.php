@@ -127,7 +127,7 @@
                                 <form action="{{ route('save.commentProject') }}" method="POST">
                                     @csrf
                                     <textarea name="comment" rows="6" cols="50" placeholder="Participa en el foro" required></textarea>
-                                    <input name="user_id" value="1" hidden>
+                                    <input name="user_id" value="{{Auth::user()->id}}" hidden>
                                     <input name="project_id" value="{{ $project->id }}" hidden>
                                     <br>
                                     <button class="btn-form badge mt-3 mb-3" type="submit">Enviar</button>
