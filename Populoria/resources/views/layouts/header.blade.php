@@ -40,8 +40,7 @@
                     <img src="{{ asset('images/Populoria.svg') }}" alt="Populoria-Logo" class="img-fluid icon">
                 </a>
 
-                {{-- Este enlace hay que cambiarlo por Auth::user()->id cuando tengamos autenticación --}}
-                <a href="{{ route('users.show', 1) }}">Perfil</a>
+                <a href="{{ route('users.show', Auth::user()->id) }}">Perfil</a>
                 {{-- Este hay que cambiarlo también --}}
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" >
                     <a><button>cERRAR SESION</button></a>

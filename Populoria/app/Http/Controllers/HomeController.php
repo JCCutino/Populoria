@@ -11,7 +11,6 @@ class HomeController extends Controller
     public function index()
     {
         $comments = Comment::where('project_id', 1)->get();
-
         return view('home', compact('comments'));
     }
 
