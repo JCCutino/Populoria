@@ -43,8 +43,8 @@
                 <a href="{{ route('users.show', Auth::user()->id) }}">Perfil</a>
                 {{-- Este hay que cambiarlo también --}}
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-                    <a><button>cERRAR SESION</button></a>
                     @csrf
+                    <a><button class="logOut">Cerrar sesión</button></a>
                 </form>
 
             </div>

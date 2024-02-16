@@ -11,3 +11,9 @@ header a {
 header .icon {
     width: 50px;
 }
+
+.logOut{
+    border: none;
+    background-color: #ffffff00;
+    color: white;
+}
