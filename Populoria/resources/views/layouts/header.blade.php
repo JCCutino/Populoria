@@ -43,7 +43,10 @@
                 {{-- Este enlace hay que cambiarlo por Auth::user()->id cuando tengamos autenticación --}}
                 <a href="{{ route('users.show', 1) }}">Perfil</a>
                 {{-- Este hay que cambiarlo también --}}
-                <a href="{{ route('welcome') }}">Cerrar sesión</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                    <a><button>cERRAR SESION</button></a>
+                    @csrf
+                </form>
 
             </div>
         </div>

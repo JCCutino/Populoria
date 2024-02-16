@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\UserController;
@@ -35,7 +35,7 @@ Route::post('/projects/create/new', [ProjectController::class, 'createProject'])
 Route::get('/projects/{project}/users', [ProjectController::class, 'manageUsers'])->name('projects.manage');
 Route::get('/projects/{project}/edit', [ProjectController::class, 'edit'])->name('projects.edit');
 Route::get('/projects/{project}', [ProjectController::class, 'show'])->name('projects.show');
-
+Route::post('/logout', [HomeController::class, 'logout'])->name('logout');
 //Rutas para los usuarios
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 Route::get('/users/create', [UserController::class, 'create'])->name('users.create');

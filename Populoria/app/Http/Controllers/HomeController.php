@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
+use Laravel\Fortify\Contracts\LogoutResponse;
 use Illuminate\Http\Request;
 use App\Models\Comment;
 
@@ -23,4 +24,18 @@ class HomeController extends Controller
         $newComment->save();
         return back();
     }
+
+    
+    public function logout(Request $request): LogoutResponse
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return app(LogoutResponse::class);
+    }
+
+
 }
