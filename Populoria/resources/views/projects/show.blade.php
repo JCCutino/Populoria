@@ -42,9 +42,10 @@
                                 <a class="no-cursor" href="#"><button
                                         class="btn btn-success mb-3">Solicitar</button></a>
                             @elseif($project->users->first()->id == 1)
-                                <a 
-                                    href="{{ route('projects.edit', $project->id) }}"><button class="btn btn-success mb-3">Ver solicitudes</button></a>
+                                <a href="{{ route('projects.manage', $project->id) }}"><button
+                                        class="btn btn-success mb-3">Ver solicitudes</button></a>
                             @endif
+                            <a href="{{route("projects.edit", $project->id)}}"><button class="btn btn-primary">Editar</button></a>
                         </div>
                     </div>
                 </div>
@@ -88,19 +89,12 @@
                                     </a>
                                     <p>{{ $user->name }}</p>
                                 </div>
-                                @php $count++ @endphp
-                                @if ($count % 2 == 0 || $loop->last)
+                            @endforeach
                         </div>
-                        @if (!$loop->last)
-                            <div class="row">
-                        @endif
-                        @endif
-                        @endforeach
                     </div>
                 </div>
-            </div>
 
-        </div>
+            </div>
         </div>
 
 
