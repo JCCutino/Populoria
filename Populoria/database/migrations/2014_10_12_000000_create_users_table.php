@@ -17,9 +17,9 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('image');
-            $table->text('about');
-            $table->boolean('admin');
+            $table->string('image')->default("images/users/default-icon.webp");
+            $table->text('about')->nullable();
+            $table->boolean('admin')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

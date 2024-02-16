@@ -16,11 +16,15 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::get('/home', function () {
+    return view('auth.dashboard');
+    })->middleware('auth');
 //Rutas para el landing page
 Route::get('/', function () {
     return view('welcome');
 })->name("welcome");
+
+
 
 //Rutas para los proyectos
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
@@ -35,7 +39,7 @@ Route::get('/users/create', [UserController::class, 'create'])->name('users.crea
 Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
 Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
 Route::post('/saveComment' ,[HomeController::class ,'saveComment'])->name('save.comment');
 Route::post('/saveCommentProject' ,[ProjectController::class ,'saveCommentProject'])->name('save.commentProject');
 
