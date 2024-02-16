@@ -25,6 +25,7 @@
 
     {{-- Aquí están el css principal y el js principal --}}
     <link href="{{ asset('styles/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('styles/database.css') }}" rel="stylesheet">
     <script defer src="{{ asset('js/welcome.js') }}"></script>
 
 </head>
@@ -153,7 +154,7 @@
                             <h5 class="bg-success rounded px-2 my-2">{{ $project->name }}</h5>
                             <p class="bg-success rounded px-2 my-2">{{ $project->description }}</p>
                             <p class="bg-success rounded px-2 my-2">{{ $project->looking }}</p>
-                            <p class="bg-success rounded px-2 my-2">{{ $project->progress }}</p>
+                            <p class="{{ $project->progress }} rounded px-2 my-2">{{ $project->progress }}</p>
                         </div>
                     @endforeach
                     <hr>
@@ -169,7 +170,7 @@
                         <h5 class="bg-success rounded px-2 my-2">{{ $project->name }}</h5>
                         <p class="bg-success rounded px-2 my-2">{{ $project->description }}</p>
                         <p class="bg-success rounded px-2 my-2">{{ $project->looking }}</p>
-                        <p class="bg-success rounded px-2 my-2">{{ $project->progress }}</p>
+                        <p class="{{ $project->progress }} rounded px-2 my-2">{{ $project->progress }}</p>
                     </div>
                     <h4 class="text-danger">Imágenes dentro del proyecto</h4>
 

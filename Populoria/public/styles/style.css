@@ -16,30 +16,6 @@ body {
     border-radius: 20px;
 }
 
-.badge-completado {
-    font-size: 20px;
-    background-color: #46a654;
-    color: #ffffff;
-    border-radius: 20px;
-    margin-right: 20px;
-}
-
-.badge-progreso {
-    font-size: 20px;
-    background-color: #beb245;
-    color: #ffffff;
-    border-radius: 20px;
-    margin-right: 20px;
-}
-
-.badge-cancelado {
-    font-size: 20px;
-    background-color: #be4141;
-    color: #ffffff;
-    border-radius: 20px;
-    margin-right: 20px;
-}
-
 header p {
     margin: 0;
 }
@@ -202,4 +178,9 @@ button a {
     max-width: 30vw;
     margin-left: auto;
     margin-right: auto;
+}
+
+.userImage:hover{
+    transform: scale(1.1);
+    box-shadow: 5px 5px 5px black;
 }

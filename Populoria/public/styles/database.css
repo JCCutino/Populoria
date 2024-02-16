@@ -1,0 +1,23 @@
+.Finalizado{
+    font-size: 20px;
+    background-color: #46a654;
+    color: #ffffff;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+
+.Activo{
+    font-size: 20px;
+    background-color: #fdc542;
+    color: #ffffff;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+
+.Cancelado{
+    font-size: 20px;
+    background-color: #be4141;
+    color: #ffffff;
+    border-radius: 20px;
+    margin-right: 20px;
+}

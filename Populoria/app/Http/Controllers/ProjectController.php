@@ -8,6 +8,7 @@ use App\Models\Image;
 use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
@@ -35,20 +36,27 @@ class ProjectController extends Controller
         return view('projects.manageUsers', compact('project'));
     }
 
-    public function saveCommentProject(Request $request){
-        $request->validate(['comment'=>'required', 'user_id'=>'required', 'project_id'=>'required']);
-        $newComment= new Comment();
-        $newComment->text=$request->comment;
-        $newComment->user_id=$request->user_id;
-        $newComment->project_id=$request->project_id;
-        $newComment->save();
-        return back();
-    }
-
     public function createView()
     {
         $categories = Category::all();
         return view('projects.create', compact("categories"));
+    }
+
+    public function request($id){
+        $project = Project::findOrFail($id);
+        $project->users()->attach(User::findOrFail(Auth::user()->id), ['status' => 'pending']);
+        return back();
+    }
+
+    public function saveCommentProject(Request $request)
+    {
+        $request->validate(['comment' => 'required', 'user_id' => 'required', 'project_id' => 'required']);
+        $newComment = new Comment();
+        $newComment->text = $request->comment;
+        $newComment->user_id = $request->user_id;
+        $newComment->project_id = $request->project_id;
+        $newComment->save();
+        return back();
     }
 
     public function createProject(Request $request)
@@ -62,10 +70,10 @@ class ProjectController extends Controller
         $newProject->users()->attach(User::findOrFail($request->input('user_id')), ['status' => 'owner']);
         $newProject->categories()->attach($request->input('categories'));
 
-        
+
         foreach ($request->file('images') as $image) {
             $filename = time() . "-" . $image->getClientOriginalName();
-        
+
             $url = "images/projects/";
             $image->move($url, $filename);
 

@@ -9,6 +9,7 @@
 
 @php
     use App\Models\User;
+    $userId = Auth::user()->id;
 @endphp
 
 @section('content')
@@ -38,14 +39,28 @@
                                 <p class="mb-4 mx-2">{{ $project->description }}</p> <!-- Añadir un margen inferior -->
                             </div>
 
-                            @if ($project->users->first()->id != Auth::user()->id)
-                                <a class="no-cursor" href="#"><button
-                                        class="btn btn-success mb-3">Solicitar</button></a>
-                            @elseif($project->users->first()->id == Auth::user()->id)
-                                <a href="{{ route('projects.manage', $project->id) }}"><button
-                                        class="btn btn-success mb-3">Ver solicitudes</button></a>
+                            @if ($project->users->contains(Auth::user()) && $project->users->first()->id == $userId)
+                                <a href="{{ route('projects.manage', $project->id) }}">
+                                    <button class="btn btn-success mb-3">Ver solicitudes</button>
+                                    <a href="{{ route('projects.edit', $project->id) }}"><button
+                                        class="btn btn-primary">Editar</button></a>
+                                </a>
+                            @elseif(!$project->users->contains(Auth::user()))
+                                <a class="no-cursor" href="{{ route('projects.request', $project->id) }}">
+                                    <button class="btn btn-success mb-3">Solicitar</button>
+                                </a>
                             @endif
-                            <a href="{{route("projects.edit", $project->id)}}"><button class="btn btn-primary">Editar</button></a>
+
+                            @if ($project->users->contains(Auth::user()))
+                                @php
+                                    $userProject = $project->users->find(Auth::user()->id);
+                                @endphp
+
+                                @if ($userProject !== null && $userProject->pivot->status === 'pending')
+                                    <p class="text-primary">Tu solicitud ha sido enviada, esperando a que el administrador
+                                        la acepte...</p>
+                                @endif
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -80,15 +95,16 @@
                     <div class="w-100 mx-auto bg-color-gray my-5 py-3 contenedor">
                         <h1>Colaboradores</h1>
                         <div class="row">
-                            @php $count = 0 @endphp
                             @foreach ($project->users as $user)
-                                <div class="col-md-6 col-6">
-                                    <a href="{{ route('users.show', $user->id) }}">
-                                        <img class="colaborators img-fluid w-100" src="{{ asset($user->image) }}"
-                                            alt="{{ $user->name }}">
-                                    </a>
-                                    <p>{{ $user->name }}</p>
-                                </div>
+                                @if ($user->pivot->status == 'accepted' || $user->pivot->status == 'owner')
+                                    <div class="col-md-6 col-6">
+                                        <a href="{{ route('users.show', $user->id) }}">
+                                            <img class="colaborators img-fluid w-100" src="{{ asset($user->image) }}"
+                                                alt="{{ $user->name }}">
+                                        </a>
+                                        <p>{{ $user->name }}</p>
+                                    </div>
+                                @endif
                             @endforeach
                         </div>
                     </div>
@@ -97,19 +113,12 @@
             </div>
         </div>
 
-
         <div class="container mt-5 mb-5">
             <div class="row">
                 <div class="col-md-12">
                     <div class="contenedor">
                         <!-- Sección de comentarios -->
                         <section class="mt-5">
-
-
-
-
-
-
                             <!-- Mostrar comentarios -->
                             <div class="comentarios-container mb-4">
                                 <h4>Comentarios de otros usarios:</h4>
@@ -127,7 +136,7 @@
                                 <form action="{{ route('save.commentProject') }}" method="POST">
                                     @csrf
                                     <textarea name="comment" rows="6" cols="50" placeholder="Participa en el foro" required></textarea>
-                                    <input name="user_id" value="{{Auth::user()->id}}" hidden>
+                                    <input name="user_id" value="{{ $userId }}" hidden>
                                     <input name="project_id" value="{{ $project->id }}" hidden>
                                     <br>
                                     <button class="btn-form badge mt-3 mb-3" type="submit">Enviar</button>

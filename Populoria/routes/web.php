@@ -1,4 +1,5 @@
 <?php
+
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjectController;
@@ -16,9 +17,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::get('/home', function () {
     return view('auth.dashboard');
-    })->middleware('auth');
+})->middleware('auth');
 
 //Rutas para el landing page
 Route::get('/', function () {
@@ -29,20 +31,21 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
     //Rutas para los proyectos
-Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
-Route::get('/projects/create', [ProjectController::class, 'createView'])->name('projects.create');
-Route::post('/projects/create/new', [ProjectController::class, 'createProject'])->name('projects.createNew');
-Route::get('/projects/{project}/users', [ProjectController::class, 'manageUsers'])->name('projects.manage');
-Route::get('/projects/{project}/edit', [ProjectController::class, 'edit'])->name('projects.edit');
-Route::get('/projects/{project}', [ProjectController::class, 'show'])->name('projects.show');
-Route::post('/logout', [HomeController::class, 'logout'])->name('logout');
-//Rutas para los usuarios
-Route::get('/users', [UserController::class, 'index'])->name('users.index');
-Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
-Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
-Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
+    Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
+    Route::get('/projects/create', [ProjectController::class, 'createView'])->name('projects.create');
+    Route::post('/projects/create/new', [ProjectController::class, 'createProject'])->name('projects.createNew');
+    Route::get('/projects/{project}', [ProjectController::class, 'show'])->name('projects.show');
+    Route::get('/projects/{project}/users', [ProjectController::class, 'manageUsers'])->name('projects.manage');
+    Route::get('/projects/{project}/edit', [ProjectController::class, 'edit'])->name('projects.edit');
+    Route::get('/projects/{project}/request', [ProjectController::class, 'request'])->name('projects.request');
+    Route::post('/logout', [HomeController::class, 'logout'])->name('logout');
+    //Rutas para los usuarios
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+    Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+    Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
 
-Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
-Route::post('/saveComment' ,[HomeController::class ,'saveComment'])->name('save.comment');
-Route::post('/saveCommentProject' ,[ProjectController::class ,'saveCommentProject'])->name('save.commentProject');
+    Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
+    Route::post('/saveComment', [HomeController::class, 'saveComment'])->name('save.comment');
+    Route::post('/saveCommentProject', [ProjectController::class, 'saveCommentProject'])->name('save.commentProject');
 });
