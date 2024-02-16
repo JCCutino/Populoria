@@ -11,7 +11,7 @@ class Project extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class)->withPivot('status');
     }
 
     public function categories()
