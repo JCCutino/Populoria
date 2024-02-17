@@ -9,17 +9,13 @@
 {{-- Os podreis quejar populopers que lo teneis ya todo hecho --}}
 @endsection
 
-@php
-    use App\Models\User;
-@endphp
-
 @section("content")
     <div class="container mt-5">
         <section>
             @foreach ($comments->reverse() as $comment)
                 <div class="d-list-item text-center ">
                     <div class="">
-                        <h4>{{User::find($comment->user_id)->name}}</h4>
+                        <h4>{{$comment->user->name}}</h4>
                     </div>
                     <div class="messages text-center">                    
                         <p class="message">{{$comment->text}}</p>

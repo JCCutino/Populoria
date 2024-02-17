@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Laravel\Fortify\Contracts\LogoutResponse;
 use Illuminate\Http\Request;
 use App\Models\Comment;
+use App\Models\User;
 
 class HomeController extends Controller
 {

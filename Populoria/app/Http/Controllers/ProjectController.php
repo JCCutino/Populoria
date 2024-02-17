@@ -26,8 +26,9 @@ class ProjectController extends Controller
 
     public function edit($id)
     {
+        $categories =  Category::all();
         $project = Project::findOrFail($id);
-        return view('projects.edit', compact('project'));
+        return view('projects.edit', compact('project'), compact("categories"));
     }
 
     public function manageUsers($id)
@@ -42,7 +43,8 @@ class ProjectController extends Controller
         return view('projects.create', compact("categories"));
     }
 
-    public function request($id){
+    public function request($id)
+    {
         $project = Project::findOrFail($id);
         $project->users()->attach(User::findOrFail(Auth::user()->id), ['status' => 'pending']);
         return back();
@@ -83,13 +85,14 @@ class ProjectController extends Controller
         return $this->show($newProject->id);
     }
 
-    public function manage($project_id, Request $request){
+    public function manage($project_id, Request $request)
+    {
         $project = Project::findOrFail($project_id);
         $user = User::findOrFail($request->input("user_id"));
-        
-        if ($request->input("deny")){
+
+        if ($request->input("deny")) {
             $project->users()->detach($user->id);
-        }else{
+        } else {
             $project->users()->updateExistingPivot($user->id, ['status' => 'accepted']);
         }
 

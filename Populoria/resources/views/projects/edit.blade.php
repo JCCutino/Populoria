@@ -7,10 +7,6 @@
     <link href="{{ asset('styles/style.css') }}" rel="stylesheet">
 @endsection
 
-@php
-    use App\Models\User;
-@endphp
-
 @section('content')
     <h1>EDITORIA</h1>
     <form method="post" action="">
@@ -62,9 +58,8 @@
                                 <div class="col-md-6 ">
                                     <h1 class="">Tecnologías Requeridas</h1>
                                     <div>
-                                        @foreach ($project->categories as $category)
-                                            <span class="badge rounded-pill mb-3"
-                                                style="background-color: {{ $category->color }}">{{ $category->name }}</span>
+                                        @foreach ($categories as $category)
+                                            <span class="badge rounded-pill mb-3 " style="background-color: @if($category->projects()) @else @endif #929292">{{ $category->name }}</span>
                                         @endforeach
                                     </div>
                                 </div>

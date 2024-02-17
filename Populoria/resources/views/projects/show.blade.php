@@ -8,7 +8,6 @@
 @endsection
 
 @php
-    use App\Models\User;
     $userId = Auth::user()->id;
 @endphp
 
@@ -124,7 +123,7 @@
                                 <h4>Comentarios de otros usarios:</h4>
                                 <ul class="list-unstyled">
                                     @foreach ($project->comments as $comment)
-                                        <li><strong>{{ User::find($comment->user_id)->name }} :</strong>
+                                        <li><strong>{{ $comment->user->name}} :</strong>
                                             {{ $comment->text }}
                                         </li>
                                     @endforeach
