@@ -85,6 +85,23 @@ class ProjectController extends Controller
         return $this->show($newProject->id);
     }
 
+    public function editProject(Request $request)
+    {
+
+        $projectId = $request->input('idProject');
+    
+        $project = Project::findOrFail($projectId);
+    
+        $project->name = $request->input('title');
+        $project->description = $request->input('description');
+        $project->looking = $request->input('looking');
+    
+        $project->save();
+    
+        return redirect()->route('projects.show', $project->id);
+    }
+    
+
     public function manage($project_id, Request $request)
     {
         $project = Project::findOrFail($project_id);
