@@ -108,12 +108,6 @@
                     <div class="contenedor">
                         <!-- Sección de comentarios -->
                         <section class="mt-5">
-
-
-
-
-
-
                             <!-- Mostrar comentarios -->
                             <div class="comentarios-container mb-4">
                                 <h4>Comentarios de otros usarios:</h4>
