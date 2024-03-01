@@ -86,20 +86,28 @@ class ProjectController extends Controller
     }
 
     public function editProject(Request $request)
-    {
+{
+    $projectId = $request->input('idProject');
+    
+    $project = Project::findOrFail($projectId);
+    
+    $project->name = $request->input('title');
+    $project->description = $request->input('description');
+    $project->looking = $request->input('looking');
 
-        $projectId = $request->input('idProject');
-    
-        $project = Project::findOrFail($projectId);
-    
-        $project->name = $request->input('title');
-        $project->description = $request->input('description');
-        $project->looking = $request->input('looking');
-    
-        $project->save();
-    
-        return redirect()->route('projects.show', $project->id);
+    $project->categories()->detach();
+
+    $selectedCategories = json_decode($request->input('selected_categories'), true);
+
+    if (!empty($selectedCategories)) {
+        $project->categories()->attach($selectedCategories);
     }
+    
+    $project->save();
+    
+    return redirect()->route('projects.show', $project->id);
+}
+
     
 
     public function manage($project_id, Request $request)
