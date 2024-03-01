@@ -8,6 +8,7 @@
 @endsection
 
 @php
+    use App\Models\User;
     $userId = Auth::user()->id;
 @endphp
 
@@ -77,7 +78,9 @@
             </div>
         </div>
     </div>
-
+    
+    <div class="container-fluid">
+        <div class="row justify-content-center"> 
                 <div class="collab col-lg-4 col-md-12">
                     <div class="w-100 mx-auto bg-color-gray my-5 py-3 contenedor">
                         <h1>Colaboradores</h1>
@@ -96,7 +99,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
 
