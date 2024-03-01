@@ -31,7 +31,7 @@
 </head>
 
 <body id="foto">
-    <svg class="index" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'>
+    <svg class="index h-100 w-100" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'>
         <rect fill='#000000' width='2000' height='1500' />
         <defs>
             <radialGradient id='a' gradientUnits='objectBoundingBox'>
