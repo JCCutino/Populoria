@@ -54,7 +54,6 @@ use Illuminate\Support\Str;
                             @endphp
                             <span class="badge rounded-pill mb-3 category" style="background-color: {{ $badgeColor }}" data-category-id="{{ $category->id }}" data-color="{{ $category->color }}" data-selected="{{ $userHasCategory ? 'selected' : 'unselected' }}">{{ $category->name }}</span>
                             @endforeach
-
                         </div>
                     </div>
                     <div class="row mt-3">
