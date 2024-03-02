@@ -43,8 +43,8 @@ class UserController extends Controller
 
     public function editUser(Request $request)
     {
-        $userId = $request->user_id;
-
+        $userId = Auth::user()->id;
+        
         $user = User::findOrFail($userId);
 
         $user->name = $request->name;
@@ -62,6 +62,6 @@ class UserController extends Controller
             }
         }
 
-        return redirect()->route('users.show', $userId)->with('success', 'Perfil actualizado exitosamente.');
+        return $this->show(Auth::user()->id);
     }
 }

@@ -16,8 +16,8 @@ use Illuminate\Support\Str;
 
 @section('content')
 <div class="container mt-5">
-    <form method="post" action="{{ route('users.editUser') }}">       
-     @csrf
+    <form method="post" action="{{ route('users.editUser') }}">
+        @csrf
 
         <div class="row">
             <!-- Contenedor de usuario -->
@@ -48,8 +48,13 @@ use Illuminate\Support\Str;
                             <input type="hidden" id="idUser" name="idUser" value="{{$user->id}}">
                             <input type="hidden" name="selected_categories" id="selected_categories">
                             @foreach ($categories as $category)
-                            <span class="badge rounded-pill mb-3 category" style="background-color: {{ $category->selected ? $category->color : '#929292' }}" data-category-id="{{ $category->id }}" data-color="{{ $category->color }}" data-selected="{{ $category->selected ? 'selected' : 'unselected' }}">{{ $category->name }}</span>
+                            @php
+                            $userHasCategory = $user->categories->contains('id', $category->id);
+                            $badgeColor = $userHasCategory ? $category->color : '#929292';
+                            @endphp
+                            <span class="badge rounded-pill mb-3 category" style="background-color: {{ $badgeColor }}" data-category-id="{{ $category->id }}" data-color="{{ $category->color }}" data-selected="{{ $userHasCategory ? 'selected' : 'unselected' }}">{{ $category->name }}</span>
                             @endforeach
+
                         </div>
                     </div>
                     <div class="row mt-3">
