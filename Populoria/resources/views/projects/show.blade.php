@@ -45,13 +45,27 @@
                                 <h1 class="mb-3 mx-2">{{ $project->name }}</h1> <!-- Añadir un margen inferior -->
                                 <p class="mb-4 mx-2">{{ $project->description }}</p> <!-- Añadir un margen inferior -->
                             </div>
-                            {{-- Cambiar por el id del usuario autenticado --}}
-                            @if ($project->users->first()->id != 1)
-                                <a class="no-cursor" href="#"><button
-                                        class="btn btn-success mb-3">Solicitar</button></a>
-                            @elseif($project->users->first()->id == 1)
-                                <a
-                                    href="{{ route('projects.edit', $project->id) }}"><button class="btn btn-success mb-3">Ver solicitudes</button></a>
+                            @if ($project->users->contains(Auth::user()) && $project->users->first()->id == $userId)
+                                <a href="{{ route('projects.manage', $project->id) }}">
+                                    <button class="btn btn-success mb-3">Ver solicitudes</button>
+                                    <a href="{{ route('projects.edit', $project->id) }}"><button
+                                        class="btn btn-primary">Editar</button></a>
+                                </a>
+                            @elseif(!$project->users->contains(Auth::user()))
+                                <a class="no-cursor" href="{{ route('projects.request', $project->id) }}">
+                                    <button class="btn btn-success mb-3">Solicitar</button>
+                                </a>
+                            @endif
+
+                            @if ($project->users->contains(Auth::user()))
+                                @php
+                                    $userProject = $project->users->find(Auth::user()->id);
+                                @endphp
+
+                                @if ($userProject !== null && $userProject->pivot->status === 'pending')
+                                    <p class="text-primary">Tu solicitud ha sido enviada, esperando a que el administrador
+                                        la acepte...</p>
+                                @endif
                             @endif
                         </div>
                     </div>

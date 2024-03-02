@@ -70,7 +70,7 @@ use Illuminate\Support\Str;
                     </div>
 
                     <div class="col-md-2 d-flex">
-                        @if ($project->pivot->status === 'owner')
+                        @if ($project->pivot->status === 'owner' &&  Auth::check() && Auth::user()->id == $user->id )
                         <a href="{{ route('projects.manage', $project->id) }}">
                             <button class="btn btn-success mb-3">Ver solicitudes</button>
                         </a>
