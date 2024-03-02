@@ -40,11 +40,13 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/projects/edit', [ProjectController::class, 'editProject'])->name('projects.editProject');
 
     Route::post('/logout', [HomeController::class, 'logout'])->name('logout');
+   
     //Rutas para los usuarios
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
     Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
     Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
+    Route::post('/users/edit', [UserController::class, 'editUser'])->name('users.editUser');
 
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::post('/saveComment', [HomeController::class, 'saveComment'])->name('save.comment');

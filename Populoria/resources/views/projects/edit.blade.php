@@ -5,7 +5,7 @@
 @section('links')
 {{-- En esta seccion se ponen las etiquetas para css y para js --}}
 <link href="{{ asset('styles/style.css') }}" rel="stylesheet">
-<script defer src="{{ asset('js/editCategoriesProject.js') }}"> </script>
+<script defer src="{{ asset('js/editCategories.js') }}"> </script>
 @endsection
 
 @section('content')
