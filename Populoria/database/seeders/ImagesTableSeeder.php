@@ -11,7 +11,7 @@ class ImagesTableSeeder extends Seeder
     public function run()
     {
         Image::create([
-            'url' => 'images/projects/Don_Kamaron.png',
+            'url' => 'images/Populoria.svg',
             'project_id' => 2,
         ]);
 
@@ -31,7 +31,7 @@ class ImagesTableSeeder extends Seeder
         ]);
 
         Image::create([
-            'url' => 'images/projects/mauroResized.jpeg',
+            'url' => 'images/projects/logo.png',
             'project_id' => 3,
         ]);
 
