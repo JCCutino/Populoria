@@ -26,16 +26,16 @@ class ProjectsTableSeeder extends Seeder
         ]);
 
         Project::create([
-            'name' => 'Ya me he cansado de inventar cosas',
-            'description' => 'Ya me he cansado de inventar cosas',
-            'looking' => 'Ya me he cansado de inventar cosas',
-            'progress' => 'Cancelado',
+            'name' => 'EcoTech',
+            'description' => 'La empresa se basa en la comercialización de productos que faciliten la vida de las personas, especialmente en el sector agrícola, de una forma respetuosa con el medio ambiente. Nuestra meta es que cada vez más se unan a nuestra iniciativa para cuidar nuestro planeta.',
+            'looking' => 'Se buscan valientes que quieran hacer de este mundo un lugar más ecológico',
+            'progress' => 'Activo',
         ]);
 
         Project::create([
-            'name' => 'Populoria',
-            'description' => 'Ya me he cansado de inventar cosas',
-            'looking' => 'Ya me he cansado de inventar cosas',
+            'name' => 'Anti-Populoria',
+            'description' => 'Populoria Hub NO se presenta como la vanguardia en la colaboración creativa al conectar a programadores y diseñadores a través de ideas de proyectos emocionantes.',
+            'looking' => 'No se busca nada',
             'progress' => 'Activo',
         ]);
 
