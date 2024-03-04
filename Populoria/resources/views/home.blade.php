@@ -35,6 +35,8 @@
         </section>
     </div>
 @endsection
+
+
 {{-- Este es el home una vez la sesión esté iniciada --}}
 
 {{-- Recordad que es necesario "npm install", luego "npm install bootstrap", luego "npm run dev", y por último "composer update" --}}

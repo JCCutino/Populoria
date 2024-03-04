@@ -1,0 +1,65 @@
+#background{
+    background-image: url('../images/textura-transformed.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.borde{
+margin-top: 6%;
+margin-bottom: 4%;
+color: rgb(11, 11, 11); }
+.log{
+    padding: 8%;
+}
+
+.space{
+    margin-bottom: 5%;
+    margin-left: 45%;
+}
+.custom-input {
+     width: 100% !important;
+    height:60% !important;
+    background-color: transparent !important;
+    border: none !important;
+    outline:none !important;
+    border-radius: 40px !important;
+    font-size: 17px !important;
+    border: 2px solid  rgb(44, 42, 45) !important;
+    color: rgb(255, 255, 255) !important;
+    padding: 20px 45px 20px 20px !important;
+}
+
+.presentation{
+    width: 420px;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 30px 40px;
+
+    background: rgba(255, 255, 255, 0.543);
+    border-radius: 16px;
+    box-shadow: 12px 10px 12px 9px rgb(255, 255, 255);
+    backdrop-filter: blur(8.2px);
+    -webkit-backdrop-filter: blur(8.2px);
+    border: 6px solid rgb(0, 0, 0);
+
+}
+
+
+.login-button {
+    width: 50%;
+    height: 40px;
+
+    border-width: 2.5px;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0px 0px 25px 10px rgb(0, 0, 0);
+    font-size: 16px;
+    color: rgb(35, 30, 30);
+    font-weight: 640;
+}
+
+.login-button:hover {
+    background-color: rgba(2, 0, 2, 0.537);
+    color: rgba(255, 0, 0, 0.567);
+    border: 2px solid rgba(255, 0, 0, 0.423);
+}
