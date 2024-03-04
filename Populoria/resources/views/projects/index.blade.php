@@ -28,6 +28,9 @@
                     <button type="submit">Filtrar</button>
                 </div>
             </form>
+            <form action="{{ route('projects.index') }}" method="GET">
+                <button type="submit">Reiniciar parametros</button>
+            </form>
         </div>
     </div>
 </div>

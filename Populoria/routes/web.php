@@ -38,7 +38,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/projects/{project}/request', [ProjectController::class, 'request'])->name('projects.request');
     Route::post('/projects/{project}/request/manage', [ProjectController::class, 'manage'])->name('projects.request.manage');
     Route::post('/projects/edit', [ProjectController::class, 'editProject'])->name('projects.editProject');
-    Route::post('/projects/filter', [ProjectController::class, 'filterProject'])->name('projects.filter');
+    Route::post('/projects', [ProjectController::class, 'filterProject'])->name('projects.filter');
 
     Route::post('/logout', [HomeController::class, 'logout'])->name('logout');
    
