@@ -9,7 +9,7 @@
 
 @section('content')
 
-<div class="row justify-content-center align-items-center g-2">
+<div class="row justify-content-center align-items-center g-2 text-center">
     <div class="col-md-6 contenedor">
         <div class="w-100 mx-auto bg-color-gray mb-5 py-3">
             <form action="{{ route('projects.filter') }}" method="POST">
@@ -26,11 +26,11 @@
                         @endforeach
                     </div>
                     <button type="submit">Filtrar</button>
-                </div>
             </form>
             <form action="{{ route('projects.index') }}" method="GET">
                 <button type="submit">Reiniciar parametros</button>
             </form>
+               </div>
         </div>
     </div>
 </div>
