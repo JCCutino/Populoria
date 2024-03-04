@@ -15,7 +15,19 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::where('id', '<>', 1)->get();
-        return view('projects.index', compact('projects'));
+        $categories=Category::all();
+        return view('projects.index', compact('projects', 'categories'));
+    }
+
+    public function filterProject(Request $request){
+        
+         $selectedCategories=explode(',', $request->input('selected_categories', ''));
+         $selectedCategories = str_replace(['[', ']', '"'], '', $selectedCategories);
+         $projects = Project::whereHas('categories', function ($query) use ($selectedCategories) {
+            $query->whereIn('categories.id', $selectedCategories);
+        })->get();
+        $categories=Category::all();
+        return view('projects.index', compact('projects', 'categories'));
     }
 
     public function show($id)

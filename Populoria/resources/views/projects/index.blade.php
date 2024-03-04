@@ -4,9 +4,36 @@
 
 @section('links')
     <link href="{{ asset('styles/style.css') }}" rel="stylesheet">
+    <script defer src="{{ asset('js/editCategories.js') }}"> </script>
 @endsection
 
 @section('content')
+
+<div class="row justify-content-center align-items-center g-2 text-center">
+    <div class="col-md-6 contenedor">
+        <div class="w-100 mx-auto bg-color-gray mb-5 py-3">
+            <form action="{{ route('projects.filter') }}" method="POST">
+                @csrf
+                <div class="w-100 mx-auto bg-color-gray mb-5 py-3">
+                    <h1 class="">Filtro de categorias</h1>
+                    <div>
+                        <input type="hidden" name="selected_categories" id="selected_categories">
+                        @foreach ($categories as $category)
+                            @php
+                                $badgeColor = '#929292';
+                            @endphp
+                            <span class="badge rounded-pill mb-3 category" style="background-color: {{ $badgeColor }}" data-category-id="{{ $category->id }}" data-color="{{ $category->color }}" data-selected="unselected">{{ $category->name }}</span>
+                        @endforeach
+                    </div>
+                    <button type="submit">Filtrar</button>
+            </form>
+            <form action="{{ route('projects.index') }}" method="GET">
+                <button type="submit">Reiniciar parametros</button>
+            </form>
+               </div>
+        </div>
+    </div>
+</div>
     @foreach ($projects as $project)
     @if ($project->progress === "Activo")
     <div class="container">

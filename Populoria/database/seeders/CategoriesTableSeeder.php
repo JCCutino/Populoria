@@ -10,14 +10,14 @@ class CategoriesTableSeeder extends Seeder
 {
     public function run()
     {
-        Category::create(['name' => 'Prematuro', 'color' => '#ff0000']);
-        Category::create(['name' => 'Maricón', 'color' => '#8000FF']);
-        Category::create(['name' => 'Gay', 'color' => '#D394E9']);
-        Category::create(['name' => 'Bujarra', 'color' => '#B594E9']);
-        Category::create(['name' => 'Laravel', 'color' => '#F05340']);
-        Category::create(['name' => 'Guapo', 'color' => '#A9DFBF']);
-        Category::create(['name' => 'Listo', 'color' => '#A2D9CE']);
-        Category::create(['name' => 'Aplicado', 'color' => '#A3E4D7']);
-        Category::create(['name' => 'Ordenado', 'color' => '#AED6F1']);
+        Category::create(['name' => 'Laravel', 'color' => '#ff0000']);
+        Category::create(['name' => 'JavaScript', 'color' => '#8000FF']);
+        Category::create(['name' => 'CSS', 'color' => '#D394E9']);
+        Category::create(['name' => 'PHP', 'color' => '#B594E9']);
+        Category::create(['name' => 'SQL', 'color' => '#F05340']);
+        Category::create(['name' => 'Phyton', 'color' => '#A9DFBF']);
+        Category::create(['name' => 'React', 'color' => '#A2D9CE']);
+        Category::create(['name' => 'Vue', 'color' => '#A3E4D7']);
+        Category::create(['name' => 'Node.js', 'color' => '#AED6F1']);
     }
 }
